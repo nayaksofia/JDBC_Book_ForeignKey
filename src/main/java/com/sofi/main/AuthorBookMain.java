@@ -35,7 +35,7 @@ public class AuthorBookMain {
 		book.setBookname(sc.next());
 		
 		System.out.println("Enter the book email: ");
-		book.setAuthor(author);
+		book.setAuthor(author); //assigned the object author 
 		
 		AuthorBookDAO dao = new AuthorBookDAO();
 		dao.addbookInfo(book, author);
