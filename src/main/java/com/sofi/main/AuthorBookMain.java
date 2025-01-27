@@ -1,6 +1,6 @@
 package com.sofi.main;
 
-import java.io.InputStream;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -13,8 +13,9 @@ public class AuthorBookMain {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
 		Scanner sc = new Scanner(System.in);
-		Author author = new Author();
 		
+		//Author
+		Author author = new Author();
 		
 		System.out.println("Enter the author id: ");
 		author.setAuthorid(sc.nextInt());
@@ -26,6 +27,7 @@ public class AuthorBookMain {
 		author.setAuthoremail(sc.next());
 		
 		
+		//Book
 		Book book = new Book();
 		
 		System.out.println("Enter the book id: ");
@@ -34,8 +36,10 @@ public class AuthorBookMain {
 		System.out.println("Enter the book name: ");
 		book.setBookname(sc.next());
 		
-		System.out.println("Enter the book email: ");
-		book.setAuthor(author); //assigned the object author 
+		//Set authorId for the book object 
+		book.setAuthorId(author.getAuthorid()); 
+		
+		//book.setAuthor(author); //assigned the object author [way-2]
 		
 		AuthorBookDAO dao = new AuthorBookDAO();
 		dao.addbookInfo(book, author);

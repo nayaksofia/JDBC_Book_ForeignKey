@@ -4,9 +4,10 @@ public class Book {
 
 	private int bookid;
 	private String bookname;
+	private int authorId ;
 
-	//Use Aggregation[In Foreign Key]--> Bring the details of another class
-	private Author author;
+	//way-2: Use Aggregation[In Foreign Key]--> Bring the details of another class
+	//private Author author;
 
 	public int getBookid() {
 		return bookid;
@@ -24,13 +25,23 @@ public class Book {
 		this.bookname = bookname;
 	}
 
-	public Author getAuthor() {
-		return author;
+	public int getAuthorId() {
+		return authorId;
 	}
 
-	public void setAuthor(Author author) {
-		this.author = author;
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
+	
+//way-2:Aggregation
+	
+//	public Author getAuthor() {
+//		return author;
+//	}
+//
+//	public void setAuthor(Author author) {
+//		this.author = author;
+//	}
 	
 	
 	
